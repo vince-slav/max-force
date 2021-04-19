@@ -103,7 +103,7 @@
                   <td><%= cliente.objetivo %></td>
                   <td><%= cliente.modalidade %></td>
                   <td>
-                    <a href="/exercicios" class="btn btn-primary">Exercício</a>
+                    <a href="/exercicios/<%= cliente.id %>" class="btn btn-primary">Exercício</a>
                     <a href="/dadosAntropometricos" class="btn btn-primary">Medidas</a>
                     <a href="/update/<%= cliente.id %>" class="btn btn-warning">Atualizar</a>
                     <form action="/delete" method="POST" style="display: inline;" onsubmit="confDel(event, this)">

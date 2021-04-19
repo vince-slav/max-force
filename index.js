@@ -128,7 +128,9 @@ app.get("/profile", (req, res) => {
 });
 
 app.get("/dadosPessoais", (req, res) => {
-  Clients.findOne()
+  Clients.findOne({
+    where: { email: email }
+  })
     .then((user) => {
       if (user != undefined) {
         res.render("dadosPessoais", { user: user });
@@ -397,27 +399,21 @@ app.post("/recExerCli", (req, res) => {
   });
 });
 
-// app.get("/exercicios", (req, res) => {
-//   Exercicios.findAll(
-//     { include: [{ model: Clients }] }
-//   ).then((exercicios) => {
-//     res.render("exercicios", { exercicios: exercicios });
-//     console.log(exercicios);
-//   }).catch((erro) => {
-//     res.send("Ocorreu um erro ao carregar a página :(");
-//     console.log("Erro ao carregar a página: " + erro);
-//   });
-// });
+app.get("/exercicios/:id", (req, res) => {
+  var id = req.params.id;
+  Clients.findByPk(id).then((user) => {
+    Exercicios.findAll(
 
-app.get("/exercicios", (req, res) => {
-  Exercicios.findAll(
-    { include: [{ model: Clients }] }
-  ).then((exercicios) => {
-    res.render("exercicios", { exercicios: exercicios });
+    ).then((exercicios) => {
+      res.render("exercicios", { exercicios: exercicios, user: user });
+    }).catch((erro) => {
+      res.send("Ocorreu um erro ao tentar carregar a página :(");
+      console.log("Erro ao carregar a página: " + erro);
+    });
   }).catch((erro) => {
-    res.send("Ocorreu um erro ao tentar carregar a página :(");
-    console.log("Erro ao carregar a página: " + erro);
-  });
+    console.log("Erro: " + erro);
+  })
+
 });
 
 app.get("/result", (req, res) => {

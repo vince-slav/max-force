@@ -12,8 +12,6 @@ const Exercicios = conn.define("exercicios", {
 
 Modalidades.hasMany(Exercicios);
 Exercicios.belongsTo(Modalidades);
-Clients.hasMany(Exercicios);
-Exercicios.belongsTo(Clients);
 
 Exercicios.sync({force: false}).then(() => {
     console.log("Tabela de exercícios em funcionamento normal");
