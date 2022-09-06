@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 
-const conn = new Sequelize("maxforce", "root", "videolan009007", {
+const conn = new Sequelize("maxforce", "root", "root", {
     host: "localhost",
     dialect: "mysql"
 });
