@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <title>Cadastrar de dados antropometricos</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/custom-bs.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="fonts/line-icons/style.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/quill.snow.css">
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div class="site-wrap">
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+
+    <!-- NAVBAR -->
+    <header class="site-navbar mt-3">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="site-logo col-6"><a href="/">maxforce</a></div>
+
+          <nav class="mx-auto site-navigation">
+            <li class="d-lg-none"><a href="/login">Login</a></li>
+            </ul>
+          </nav>
+
+          <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+            <div class="ml-auto">
+              <a href="/clients" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Voltar</a>
+              <a href="/admDeslog" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block">Deslogar</a>
+            </div>
+            <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span
+                class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HOME -->
+    <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');"
+      id="home-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h1 class="text-white font-weight-bold"> Dados antropometricos</h1>
+            <div class="custom-breadcrumbs">
+              <a href="/">Home</a> <span class="mx-2 slash">/</span>
+              <a href="/clients">Área administrativa</a> <span class="mx-2 slash">/</span>
+              <span class="text-white"><strong>Dados antropometricos</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-5">
+            <h2 class="mb-4">Dados Antropometricos</h2>
+            <form action="/recDadosAntropometricos" method="POST" class="p-4 border rounded" style="width: 1100px;">
+              <div class="row form-group">
+                <div class="col-md-8 mb-3 mb-md-0">
+                  <label>Nome do cliente</label>
+                  <select class="form-control" data-style="btn-white btn-lg" data-width="100%" data-live-search="true"
+                    name="cliente">
+                    <% clientes.forEach((cliente)=> { %>
+                      <option value="<%= cliente.id %>">
+                        <%= cliente.nome %>
+                      </option>
+                      <% }) %>
+                  </select>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-2 mb-3 mb-md-0">
+                  <label class="text-black" for="fpeso">Peso</label>
+                  <input type="number" id="fpeso" class="form-control" placeholder="" name="peso">
+                </div>
+                <div class="col-md-2 mb-3 mb-md-0">
+                  <label class="text-black" for="falt">Estatura</label>
+                  <input type="number" id="falt" class="form-control" placeholder="" name="estatura">
+                </div>
+                <div class="col-md-2 mb-3 mb-md-0">
+                  <label class="text-black" for="fdobra-tricipal">Dobra Tricipal</label>
+                  <input type="number" id="fdobra-tricipal" class="form-control" placeholder="" name="dobraTricipal">
+                </div>
+
+              </div>
+              <div class="row form-group">
+
+                <div class="col-md-2 mb-3 mb-md-0">
+                  <label class="text-black" for="fdobra-coxa">Dobra / Coxa</label>
+                  <input type="number" id="fdobra-coxa" class="form-control" placeholder="" name="dobraCoxa">
+                </div>
+                <div class="col-md-2 mb-3 mb-md-0">
+                  <label class="text-black" for="fdobra-toraxica">Dobra Toráxica</label>
+                  <input type="number" id="fdobra-toraxica" class="form-control" placeholder="" name="dobraToraxica">
+                </div>
+                <div class="col-md-2 mb-3 mb-md-0">
+                  <label class="text-black" for="fdobra-suprailiaca">Dobra Suprailiaca</label>
+                  <input type="number" id="fdobra-suprailiaca" class="form-control" placeholder=""
+                    name="dobraSuprailiaca">
+                </div>
+
+                <div class="col-md-2 mb-3 mb-md-0">
+                  <label class="text-black" for="fdobra-abdominal">Dobra Abdominal</label>
+                  <input type="number" id="fdobra-abdominal" class="form-control" placeholder="" name="dobraAbdominal">
+                </div>
+                <div class="col-md-2 mb-3 mb-md-0">
+                  <label class="text-black" for="fdobra-subescapular">Dobra Subescapular</label>
+                  <input type="number" id="fdobra-subescapular" class="form-control" placeholder=""
+                    name="dobraSubescapular">
+                </div>
+                <div class="col-md-2 mb-3 mb-md-0">
+                  <label class="text-black" for="fdobra-axilar-m">Dobra Axilar M</label>
+                  <input type="number" id="fdobra-axilar-m" class="form-control" placeholder="" name="dobraAxilarMedia">
+                </div>
+
+              </div>
+              <div class="row form-group mb-4">
+                <div class="col-md-2 mb-3 mb-md-0">
+                  <label class="text-black" for="fcircum-brac-relax">Circumferência Braco Relaxado</label>
+                  <input type="number" id="fcircum-brac-relax" class="form-control" placeholder=""
+                    name="circumferenciaBracoRelaxado">
+                </div>
+                <div class="col-md-2 mb-3 mb-md-0">
+                  <label class="text-black" for="fcircum-ante-brac">Circumferencia Antebraco</label>
+                  <input type="number" id="fcircum-ante-brac" class="form-control" placeholder=""
+                    name="circumferenciaAntebraco">
+                </div>
+                <div class="col-md-2 mb-3 mb-md-0">
+                  <label class="text-black" for="fcircum-cintura">Circumferencia Cintura</label>
+                  <input type="number" id="fcircum-cintura" class="form-control" placeholder=""
+                    name="circumferenciaCintura">
+                </div>
+                <div class="col-md-2 mb-3 mb-md-0">
+                  <label class="text-black" for="fcircum-abdomen">Circumferencia Abdomen</label>
+                  <input type="number" id="fcircum-abdomen" class="form-control" placeholder=""
+                    name="circumferenciaAbdomen">
+                </div>
+                <div class="col-md-2 mb-3 mb-md-0">
+                  <label class="text-black" for="fcircum-quadril">Circumferencia Quadril</label>
+                  <input type="number" id="fcircum-quadril" class="form-control" placeholder=""
+                    name="circumferenciaQuadril">
+                </div>
+                <div class="col-md-2 mb-3 mb-md-0">
+                  <label class="text-black" for="fcircum-coxa-med">Circumferencia Coxa Medial</label>
+                  <input type="number" id="fcircum-coxa-med" class="form-control" placeholder=""
+                    name="circumferenciaCoxaMedial">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <input type="submit" value="Salvar" class="btn px-4 btn-primary text-white">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <%- include('includes/footer') %>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/isotope.pkgd.min.js"></script>
+  <script src="js/stickyfill.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/quill.min.js"></script>
+  <script src="js/bootstrap-select.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="/js/jquery.mask.min.js"></script>
+  <script>
+    $(".phone").mask("(00) 000000000");
+  </script>
+  <script>
+    $(".cpf").mask("000.000.000-00");
+  </script>
+  <script>
+    $(".cep").mask("00000-000")
+  </script>
+</body>
+</html>
