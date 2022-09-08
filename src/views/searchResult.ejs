@@ -84,11 +84,14 @@
               <tr>
                 <th>ID</th>
                 <th>Nome</th>
+                <th>CPF</th>
                 <th>Telefone</th>
                 <th>Cidade</th>
                 <th>Objetivo</th>
-                <th>Modalidade</th>
-                <th></th>
+                <th>Exercício</th>
+                <th>Medidas</th>
+                <th>Atualizar</th>
+                <th>Deletar</th>
               </tr>
             </thead>
             <tbody>
@@ -96,17 +99,23 @@
                 <tr>
                   <td><%= cliente.id %></td>
                   <td><%= cliente.nome %></td>
+                  <td><%= cliente.cpf %></td>
                   <td><%= cliente.tel %></td>
                   <td><%= cliente.cidade %></td>
                   <td><%= cliente.objetivo %></td>
-                  <td><%= cliente.modalidade %></td>
                   <td>
-                    <a href="/exercicios/<%= cliente.id %>" class="btn btn-primary">Exercício</a>
-                    <a href="/dadosAntropometricos" class="btn btn-primary">Medidas</a>
-                    <a href="/update/<%= cliente.id %>" class="btn btn-warning">Atualizar</a>
+                    <a href="/exercicios/<%= cliente.id %>" class="btn btn-primary"><i class="fa-solid fa-dumbbell"></i></a>
+                  </td>
+                  <td>
+                    <a href="/dadosAntropometricos" class="btn btn-primary"><i class="fa-solid fa-ruler-combined"></i></a>
+                  </td>
+                  <td>
+                    <a href="/update/<%= cliente.id %>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                  </td>
+                  <td>
                     <form action="/delete" method="POST" style="display: inline;" onsubmit="confDel(event, this)">
                       <input type="hidden" name="id" value="<%= cliente.id %>">
-                        <button class="btn btn-danger">Deletar</button>
+                        <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                     </form>
                   </td>
                 </tr>

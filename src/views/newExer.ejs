@@ -86,6 +86,7 @@
                 <div class="col-md-6 mb-3 mb-md-0">
                   <label class="text-black" for="fnome">Informe o exercício</label>
                   <input type="text" id="fnome" class="form-control" placeholder="" name="nome">
+                  <small>Ex: supino deitado</small>
                 </div>
               </div>
 
@@ -116,5 +117,23 @@
   <script src="js/quill.min.js"></script>
   <script src="js/bootstrap-select.min.js"></script>
   <script src="js/custom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('success')){
+      swal({
+        icon: 'success',
+        text: 'Exercício cadastrado com sucesso!',
+        button: "Fechar",
+      });
+    }
+    if(urlParams.has('error')){
+      swal({
+        icon: 'error',
+        text: 'Erro ao tentar cadastrar o exercício.',
+        button: "Fechar",
+      });
+    }
+  </script>
 </body>
 </html>

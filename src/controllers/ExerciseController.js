@@ -15,10 +15,10 @@ exports.recExer = (req, res) => {
     modalidadeId: modalidade,
   })
     .then(() => {
-      res.redirect("/clients");
+      res.redirect("/novo-exercicio?success=true");
     })
     .catch((erro) => {
-      res.send("Houve um erro ao tentar cadastrar o exercício :(");
+      res.redirect("/novo-exercicio?error=true");
     });
 };
 
@@ -32,9 +32,9 @@ exports.recMod = (req, res) => {
     nome: modalidade,
   })
     .then(() => {
-      res.redirect("/clients");
+      res.redirect("/nova-modalidade?success=true");
     })
     .catch((erro) => {
-      res.send("Houve um erro ao tentar cadastrar a modalidade :(");
+      res.redirect("/nova-modalidade?error=true");
     });
 };

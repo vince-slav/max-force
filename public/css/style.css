@@ -2198,23 +2198,23 @@ h4 {
 }
 
 
-.food-area {
+.cards-area {
   margin: 60px auto;
 }
 
-.food-area .food-img {
+.cards-area .card-img {
   overflow: hidden;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
-.food-area .food-img img {
+.cards-area .card-img img {
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 
-.food-area .food-content {
+.cards-area .card-content {
   padding: 30px;
   background: #f9f9ff;
   -webkit-transition: 0.5s;
@@ -2222,7 +2222,7 @@ h4 {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
-.food-area .food-content .style-change {
+.cards-area .card-content .style-change {
   color: #89ba16;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
@@ -2232,14 +2232,14 @@ h4 {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
-.food-area .food-content p {
+.cards-area .card-content p {
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 
-.food-area .single-food:hover img {
+.cards-area .single-card:hover img {
   -webkit-transform: scale(1.1, 1.1);
   -moz-transform: scale(1.1, 1.1);
   -ms-transform: scale(1.1, 1.1);
@@ -2248,14 +2248,11 @@ h4 {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
-.food-area .single-food:hover .food-content {
+.cards-area .single-card:hover .card-content {
   background: #89ba16;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
-.food-area .single-food:hover .food-content .style-change {
+.cards-area .single-card:hover .card-content .style-change {
   color: #fff;
-}
-.food-area .single-food:hover .food-content p {
-  color: #131230;
 }
