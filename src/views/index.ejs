@@ -15,20 +15,6 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/animate.min.css" />
     <link rel="stylesheet" href="css/quill.snow.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <link rel="stylesheet" href="css/animate.min.css" />
 
     <!-- MAIN CSS -->
@@ -36,12 +22,12 @@
   </head>
 
   <body id="top">
-    <!-- <div id="overlayer"></div>
+    <div id="overlayer"></div>
     <div class="loader">
       <div class="spinner-border text-primary" role="status">
         <span class="sr-only">Loading...</span>
       </div>
-    </div> -->
+    </div>
 
     <div class="site-wrap">
       <div class="site-mobile-menu site-navbar-target">
@@ -50,7 +36,21 @@
             <span class="icon-close2 js-menu-toggle"></span>
           </div>
         </div>
-        <div class="site-mobile-menu-body"></div>
+        <div class="site-mobile-menu-body">
+          <div class="site-mobile-menu">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <a href="/login"> Meu Perfil </a>
+              </li>
+              <li class="list-group-item">
+                <a href="/contato">Fale conosco</a>
+              </li>
+              <li class="list-group-item">
+                <a href="/admin">Área restrita</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <!-- .site-mobile-menu -->
 
@@ -115,7 +115,6 @@
         </a>
       </section>
 
-
       <section
         class="pt-5 bg-image overlay-primary fixed overlay"
         style="background-image: url('images/hero_1.jpg')"
@@ -170,7 +169,12 @@
             <div class="col-md-4 col-sm-12">
               <div class="single-card">
                 <div class="card-img">
-                  <img src="images/ft3.jpg" class="img-fluid" alt="" style="height: auto;" />
+                  <img
+                    src="images/ft3.jpg"
+                    class="img-fluid"
+                    alt=""
+                    style="height: auto"
+                  />
                 </div>
                 <div class="card-content">
                   <div class="d-flex justify-content-center">
@@ -222,21 +226,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="../public/js/bootstrap-select.min.js"></script>
-    <script src="../public/js/custom.js"></script>
-    <script>
-      $(document).ready(function () {
-        $(".owl-carousel").owlCarousel({
-          items: 1,
-          loop: true,
-          nav: false,
-          dots: false,
-          autoplay: true,
-          autoplaySpeed: 1000,
-          smartSpeed: 1500,
-          autoplayHoverPause: true,
-        });
-      });
-    </script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/custom.js"></script>
   </body>
 </html>

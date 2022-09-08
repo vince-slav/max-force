@@ -1718,6 +1718,35 @@ h4 {
   color: #fff;
 }
 
+/* @media (min-width: 320px) {
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 600px) {
+  .footer-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+} */
+
+
 .footer-wrapper {
   display: flex;
   flex-direction: row;
@@ -2196,7 +2225,6 @@ h4 {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
 
 .cards-area {
   margin: 60px auto;

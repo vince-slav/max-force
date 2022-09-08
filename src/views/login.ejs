@@ -1,109 +1,157 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <title>Cadastre - se</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/custom-bs.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="fonts/line-icons/style.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/quill.snow.css">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="css/custom-bs.css" />
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="fonts/line-icons/style.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <link rel="stylesheet" href="css/quill.snow.css" />
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body id="top">
-  <div id="overlayer"></div>
-  <div class="loader">
-    <div class="spinner-border text-primary" role="status">
-      <span class="sr-only">Loading...</span>
-    </div>
-  </div>
-  
-<div class="site-wrap">
-  <div class="site-mobile-menu site-navbar-target">
-    <div class="site-mobile-menu-header">
-      <div class="site-mobile-menu-close mt-3">
-        <span class="icon-close2 js-menu-toggle"></span>
+    <div id="overlayer"></div>
+    <div class="loader">
+      <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
       </div>
     </div>
-  <div class="site-mobile-menu-body"></div>
-</div> <!-- .site-mobile-menu -->
-    
-<!-- NAVBAR -->
-<header class="site-navbar mt-3">
-  <div class="container-fluid">
-    <div class="row align-items-center">
-      <div class="site-logo col-6"><a href="/">maxforce</a></div>
 
-      <nav class="mx-auto site-navigation">
-          <li class="d-lg-none"><a href="/login">Login</a></li>
-        </ul>
-      </nav>
-      
-      <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
-        <div class="ml-auto">
-          <a href="/" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Home</a>
-          <a href="/contato" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span
-            class=""></span>Fale conosco</a>
+    <div class="site-wrap">
+      <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
         </div>
-        <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
-      </div>
-
-    </div>
-  </div>
-</header>
-
-
-    <!-- HOME -->
-    <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');" id="home-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7">
-            <h1 class="text-white font-weight-bold">Login</h1>
-            <div class="custom-breadcrumbs">
-              <a href="/">Home</a> <span class="mx-2 slash">/</span>
-              <span class="text-white"><strong>Login</strong></span>
-            </div>
+        <div class="site-mobile-menu-body">
+          <div class="site-mobile-menu">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <a href="/login"> Meu Perfil </a>
+              </li>
+              <li class="list-group-item">
+                <a href="/contato">Fale conosco</a>
+              </li>
+              <li class="list-group-item">
+                <a href="/admin">Área restrita</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
+      <!-- .site-mobile-menu -->
 
-    <section class="site-section">
-      <div class="container">
+      <!-- NAVBAR -->
+      <header class="site-navbar mt-3">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="site-logo col-6"><a href="/">maxforce</a></div>
+
+            <!-- <nav class="mx-auto site-navigation">
+          <li class="d-lg-none"><a href="/login">Login</a></li>
+        </ul>
+      </nav> -->
+
+            <div
+              class="right-cta-menu text-right d-flex aligin-items-center col-6"
+            >
+              <div class="ml-auto">
+                <a
+                  href="/"
+                  class="btn btn-primary border-width-2 d-none d-lg-inline-block"
+                  >Home</a
+                >
+                <a
+                  href="/contato"
+                  class="btn btn-primary border-width-2 d-none d-lg-inline-block"
+                  ><span class=""></span>Fale conosco</a
+                >
+              </div>
+              <a
+                href="#"
+                class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"
+                ><span class="icon-menu h3 m-0 p-0 mt-2"></span
+              ></a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- HOME -->
+      <section
+        class="section-hero overlay inner-page bg-image"
+        style="background-image: url('images/hero_1.jpg')"
+        id="home-section"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7">
+              <h1 class="text-white font-weight-bold">Login</h1>
+              <div class="custom-breadcrumbs">
+                <a href="/">Home</a> <span class="mx-2 slash">/</span>
+                <span class="text-white"><strong>Login</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="site-section">
+        <div class="container">
           <div class="col-lg-6">
             <h2 class="mb-4">Faça o login para ecessar seu perfil</h2>
             <form action="/authUser" method="POST" class="p-4 border rounded">
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="text-black" for="fmail2">Email</label>
-                  <input type="text" id="fmail2" class="form-control" placeholder="" name="email">
+                  <input
+                    type="text"
+                    id="fmail2"
+                    class="form-control"
+                    placeholder=""
+                    name="email"
+                  />
                 </div>
               </div>
               <div class="row form-group mb-4">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="text-black" for="fpass2">Senha</label>
-                  <input type="password" id="fpass2" class="form-control" placeholder="" name="senha">
+                  <input
+                    type="password"
+                    id="fpass2"
+                    class="form-control"
+                    placeholder=""
+                    name="senha"
+                  />
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <input type="submit" value="Login" class="btn px-4 btn-primary text-white">
+                  <input
+                    type="submit"
+                    value="Login"
+                    class="btn px-4 btn-primary text-white"
+                  />
                 </div>
               </div>
-
             </form>
           </div>
         </div>
-    </section>
-    
-    <%- include('includes/footer') %>
-  </div>
+      </section>
+
+      <%- include('includes/footer') %>
+    </div>
 
     <!-- SCRIPTS -->
     <script src="js/jquery.min.js"></script>
@@ -126,16 +174,21 @@
       $(".cpf").mask("000.000.000-00");
     </script>
     <script>
-      $(".cep").mask("00000-000")
+      $(".cep").mask("00000-000");
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+      integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script>
       var urlParams = new URLSearchParams(window.location.search);
-      if(urlParams.has('error')){
+      if (urlParams.has("error")) {
         swal({
-          icon: 'error',
-          title: 'Algo deu errado',
-          text: 'E-Mail ou senha incorreta!',
+          icon: "error",
+          title: "Algo deu errado",
+          text: "E-Mail ou senha incorreta!",
           button: "Fechar",
         });
       }
