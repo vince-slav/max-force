@@ -278,5 +278,17 @@
     <script>
       $(".cep").mask("00000-000")
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      var urlParams = new URLSearchParams(window.location.search);
+      if(urlParams.has('success')){
+        swal({
+          icon: 'success',
+          title: 'Muito bem',
+          text: 'Cadastro realizado com sucesso!',
+          button: "Fechar",
+        });
+      }
+    </script>
   </body>
 </html>

@@ -2,6 +2,7 @@ const Clients = require("../models/Clients");
 const DadosAntropometricos = require("../models/DadosAntropometricos");
 const Exercicios = require("../models/Exercicios");
 const ClienteExercicios = require("../models/ExerciciosCliente");
+const { Op } = require("sequelize");
 
 exports.login = (req, res) => {
   res.render("login");
@@ -37,7 +38,7 @@ exports.medidas = (req, res) => {
       if (medidas != undefined) {
         res.render("medidas", { medidas: medidas });
       } else {
-        res.send("Erro: dados não encontrado.");
+        res.send("Erro: você não possui medidas cadastradas :(");
       }
     })
     .catch((erro) => {
@@ -51,7 +52,7 @@ exports.treinoDoDia = (req, res) => {
       if (treino != undefined) {
         res.render("treino", { treino: treino });
       } else {
-        res.send("Erro: treino não encontrado.");
+        res.send("Você não possui nenhum treino cadastrado");
       }
     })
     .catch((erro) => {
@@ -79,8 +80,8 @@ exports.newClient = (req, res) => {
 
   Clients.findOne({ where: { email: email } }).then((user) => {
     if (user == undefined) {
-      var salt = bcrypt.genSaltSync(10);
-      var hash = bcrypt.hashSync(senha, salt);
+      // var salt = bcrypt.genSaltSync(10);
+      // var hash = bcrypt.hashSync(senha, salt);
       Clients.create({
         nome: nome,
         email: email,
@@ -96,11 +97,12 @@ exports.newClient = (req, res) => {
         vencimento: vencimento,
         modalidade: modalidade,
         objetivo: objetivo,
-        senha: hash,
+        senha: senha,
         observacao: observacao,
       })
         .then(() => {
-          res.redirect("/searchClient");
+          res.redirect("/newuser?success=true");
+          // res.redirect("/searchClient");
         })
         .catch((erro) => {
           res.send("Erro ao cadastrar os dados pessoais");
@@ -247,6 +249,55 @@ exports.recUpdate = (req, res) => {
     .catch((erro) => {
       res.send("Ocorreu um erro ao tentar salvar as alterções :(");
       console.log("Erro ao salvar as alteraçoes: " + erro);
+    });
+};
+
+exports.recUpProfile = (req, res) => {
+  var id = req.body.id;
+  var nome = req.body.nome;
+  var email = req.body.email;
+  var sexo = req.body.sexo;
+  var nascimento = req.body.datan;
+  var cpf = req.body.cpf;
+  var tel = req.body.tel;
+  var objetivo = req.body.obj;
+  var senha = req.body.senha;
+  var observacao = req.body.obs;
+
+  Clients.update(
+    {
+      nome: nome,
+      email: email,
+      sexo: sexo,
+      nascimento: nascimento,
+      cpf: cpf,
+      tel: tel,
+      objetivo: objetivo,
+      senha: senha,
+      observacao: observacao,
+    },
+    { where: { id: id } }
+  )
+    .then(() => {
+      res.redirect("back");
+    })
+    .catch((erro) => {
+      res.redirect("back");
+    });
+};
+
+exports.upProfile = (req, res) => {
+  var id = req.params.id;
+  Clients.findByPk(id)
+    .then((cliente) => {
+      if (cliente != undefined) {
+        res.render("upProfile", { cliente: cliente });
+      } else {
+        res.redirect("/");
+      }
+    })
+    .catch((erro) => {
+      res.redirect("/");
     });
 };
 
@@ -413,29 +464,17 @@ exports.authUser = (req, res) => {
   Clients.findOne({ where: { email: email } })
     .then((user) => {
       if (user != undefined) {
-        var correct = bcrypt.compareSync(senha, user.senha);
-        if (correct) {
+        if (senha == user.senha) {
           req.session.user = {
             id: user.id,
             email: user.email,
           };
-
-          Clients.findOne({ where: { email: email } })
-            .then((user) => {
-              if (user != undefined) {
-                res.render("profile", { user: user });
-              } else {
-                res.send("Erro: Usuário não encontrado.");
-              }
-            })
-            .catch((erro) => {
-              console.log("Erro: " + erro);
-            });
+          res.render("profile", { user: user });
         } else {
-          res.redirect("/");
+          res.redirect("/login?error=true");
         }
       } else {
-        res.redirect("/");
+        res.redirect("/login?error=true");
       }
     })
     .catch((erro) => {

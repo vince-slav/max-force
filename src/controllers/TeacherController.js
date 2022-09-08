@@ -1,5 +1,8 @@
 const Clients = require("../models/Clients");
 const Admin = require("../models/Admin");
+// const bcrypt = require("bcryptjs");
+const Swal = require("sweetalert2");
+const { Op } = require("sequelize");
 
 exports.admDeslog = (req, res) => {
   req.session.admin = undefined;
@@ -170,22 +173,20 @@ exports.authenticate = (req, res) => {
 
   Admin.findOne({ where: { email: email } }).then((admin) => {
     if (admin != undefined) {
-      var correct = bcrypt.compareSync(pass, admin.senha);
-      if (correct) {
+      // caso exista admin com esse email
+      // var correct = bcrypt.compareSync(pass, admin.senha);
+
+      if (pass == admin.senha) {
         req.session.admin = {
           id: admin.id,
           email: admin.email,
         };
         res.redirect("/clients");
       } else {
-        res.send("E-Mail ou senha incorreto");
-        // res.redirect("/admin");
+        res.redirect("/admin?error=true");
       }
-    } else if (email == "admin@max.com" && pass == "admin") {
-      res.redirect("/clients");
     } else {
-      //colocar o alert de usuário não cadastrado
-      res.redirect("/admin");
+      res.redirect("/admin?error=true");
     }
   });
 };

@@ -4,6 +4,7 @@ const SiteController = require("./src/controllers/SiteController");
 const ClientController = require("./src/controllers/ClientController");
 const TeacherController = require("./src/controllers/TeacherController");
 const ExerciseController = require("./src/controllers/ExerciseController");
+const authAdm = require("./src/middleware/authAdm");
 
 
 //  ROTAS REFERENTES AO SITE
@@ -23,7 +24,7 @@ route.get("/treinoDoDia", ClientController.treinoDoDia);
 route.post("/rec", ClientController.newClient);
 route.get("/dadosAntropometricos", ClientController.dadosAntropometricos);
 route.post("/recDadosAntropometricos", ClientController.recDadosAntropometricos);
-route.post("/delete", ClientController.deleteClient);
+route.post("/delete", authAdm, ClientController.deleteClient);
 route.get("/update/:id", ClientController.updateClient);
 route.post("/recUpdate", ClientController.recUpdate);
 route.get("/searchClient", ClientController.searchClient);
@@ -32,14 +33,16 @@ route.get("/exercicios/:id", ClientController.exercicios);
 route.get("/result", ClientController.result);
 route.post("/recSearch", ClientController.recSearch);
 route.post("/authUser", ClientController.authUser);
+route.get("/upProfile/:id", ClientController.upProfile);
+route.post("/recUpProfile", ClientController.recUpProfile);
 
 // ROTAS REFERENTES AOS PROFESSORES
 route.get("/admDeslog", TeacherController.admDeslog);
 route.get("/admin", TeacherController.admin);
-route.get("/clients", TeacherController.clients);
+route.get("/clients", authAdm, TeacherController.clients);
 route.get("/adm2", TeacherController.adm2);
 route.get("/newAdm", TeacherController.newAdm);
-route.post("/deleteAdm", TeacherController.deleteAdm);
+route.post("/deleteAdm", authAdm, TeacherController.deleteAdm);
 route.get("/updateAdm/:id", TeacherController.updateAdm);
 route.post("/recUpdateAdm", TeacherController.recUpdateAdm);
 route.get("/searchResultAdm", TeacherController.searchResultAdm);

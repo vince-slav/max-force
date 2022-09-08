@@ -15,18 +15,9 @@ const app = express();
 const path = require('path')
 const bodyParser = require("body-parser");
 const session = require("express-session");
-// const Clients = require("./database/Clients");
-// const Admin = require("./database/Admin");
-// const Contatato = require("./database/Contatato");
-// const DadosAntropometricos = require("./database/DadosAntropometricos");
-// const Modalidades = require("./database/ModalidadesExer");
-// const Exercicios = require("./database/Exercicios");
-// const ClienteExercicios = require("./database/ExerciciosCliente");
-// const MsgContato = require("./database/Contatato");
 const authAdm = require("./src/middleware/authAdm");
-const bcrypt = require("bcryptjs");
+// const bcrypt = require("bcryptjs");
 const connection = require("./src/database/connection");
-const { Op } = require("sequelize");
 const routes = require("./routes");
 
 app.use(session({

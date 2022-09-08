@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/quill.snow.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">    
   </head>
@@ -47,10 +48,8 @@
       
       <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
         <div class="ml-auto">
-          <a href="/dadosPessoais" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Meus dados pessoais</a>
           <a href="/medidas" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Minhas medidas</a>
-          <a href="/" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Meu treino</a>
-          <a href="/" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Home</a>
+          <a href="/treinoDoDia" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Meu treino</a>
           <a href="/contato" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span
             class=""></span>Fale conosco</a>
         </div>
@@ -66,6 +65,26 @@
           <div class="col-md-7">
             <h1 class="text-white font-weight-bold" style="color: #89ba16;"><%= user.nome %></h1>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section pt-5">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card" style="border-style: solid; border-color: #008000; width: 450px;">
+              <div class="card-body">
+                <h4 class="card-title" style="color: #008000;">Meu Perfil</h4><span><a href="/upProfile/<%= user.id %>"><i style="color: #008000;" class="fa-solid fa-pen-to-square"></i></a></span>
+                <hr style="border-color: #008000;">
+                <p class="card-text"><strong style="color: #008000;">Nome completo:</strong> <span class="card-text"><%= user.nome %></span></p>
+                <p class="card-text"><strong style="color: #008000;">E-mail:</strong> <span class="card-text"><%= user.email %></span></p>
+                <p class="card-text"><strong style="color: #008000;">Sexo:</strong> <span class="card-text"><%= user.sexo %></span></p>                
+                <p class="card-text"><strong style="color: #008000;">Telefone:</strong> <span class="card-text"><%= user.tel %></span></p>                
+                <p class="card-text"><strong style="color: #008000;">Objetivo:</strong> <span class="card-text"><%= user.objetivo %></span></p>                
+              </div>
+            </div>
+          </div>                      
         </div>
       </div>
     </section>
@@ -93,15 +112,5 @@
     <script src="js/quill.min.js"></script>
     <script src="js/bootstrap-select.min.js"></script>
     <script src="js/custom.js"></script>
-    <script src="/js/jquery.mask.min.js"></script>
-    <script>
-      $(".phone").mask("(00) 000000000");
-    </script>
-    <script>
-      $(".cpf").mask("000.000.000-00");
-    </script>
-    <script>
-      $(".cep").mask("00000-000")
-    </script>
   </body>
 </html>

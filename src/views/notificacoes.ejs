@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/quill.snow.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">    
   </head>
@@ -74,7 +75,7 @@
         </div>
       </div>
     </section>
-    <section class="site-section">
+    <section class="site-section mx-3">
       <div class="container">
         <div class="row">
           <table class="table table-bordered table-hover">
@@ -83,7 +84,7 @@
                 <th>E-mail</th>
                 <th>Assunto</th>
                 <th>Mensagem</th>
-                <th></th>
+                <th>Deletar</th>
               </tr>
             </thead>
             <tbody>
@@ -93,9 +94,9 @@
                   <td><%= msg.assunto %></td>
                   <td><%= msg.mensagem %></td>
                   <td>
-                    <form action="/delete-not" method="POST" style="display: inline;" onsubmit="confDel(event, this)">
+                    <form action="/delete-not" method="POST" style="display: inline;" onsubmit="confDel()">
                       <input type="hidden" name="id" value="<%= msg.id %>">
-                        <button class="btn btn-danger">Deletar</button>
+                      <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                     </form>
                   </td>
                 </tr>
@@ -124,12 +125,35 @@
     <script src="js/custom.js"></script>
     <script src="/js/jquery.mask.min.js"></script>
     <script>
-      function confDel(event, form){
+      function confDel2(event, form){
         event.preventDefault();
         var resp = confirm("Deseja excluir a notificação?");
         if(resp){
           form.submit();
         }
+      }
+    </script>
+    <script>
+      function confDel(){
+        Swal({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+          form.submit();
+            
+            Swal(
+              'Deletada!',
+              'Sua notificação foi deletada com sucesso.',
+              'success'
+            )
+          }
+        })
       }
     </script>
   </body>

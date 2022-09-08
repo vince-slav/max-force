@@ -2198,3 +2198,64 @@ h4 {
 }
 
 
+.food-area {
+  margin: 60px auto;
+}
+
+.food-area .food-img {
+  overflow: hidden;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.food-area .food-img img {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.food-area .food-content {
+  padding: 30px;
+  background: #f9f9ff;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.food-area .food-content .style-change {
+  color: #89ba16;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.food-area .food-content p {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.food-area .single-food:hover img {
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -o-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.food-area .single-food:hover .food-content {
+  background: #89ba16;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.food-area .single-food:hover .food-content .style-change {
+  color: #fff;
+}
+.food-area .single-food:hover .food-content p {
+  color: #131230;
+}

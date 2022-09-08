@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/animate.min.css">
   <link rel="stylesheet" href="css/quill.snow.css">
+  
 
   <!-- MAIN CSS -->
   <link rel="stylesheet" href="css/style.css">
@@ -129,6 +130,20 @@
   <script>
     $(".cpf").mask("000.000.000-00");
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('error')){
+      swal({
+        icon: 'error',
+        title: 'Algo deu errado',
+        text: 'E-Mail ou senha incorreta!',
+        button: "Fechar",
+      });
+    }
+  </script>
+  
+ 
 </body>
 
 </html>
