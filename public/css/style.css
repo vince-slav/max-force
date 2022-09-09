@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 .site-navbar {
   margin-bottom: 0px;
   z-index: 1999;
@@ -1718,7 +1720,7 @@ h4 {
   color: #fff;
 }
 
-/* @media (min-width: 320px) {
+/* @media (min-width: 350px) {
   .footer-wrapper {
     display: flex;
     flex-direction: column;
@@ -1731,9 +1733,9 @@ h4 {
     justify-content: center;
     align-items: center;
   }
-}
-
-@media (min-width: 600px) {
+}  */
+/*
+@media (min-width: 767px) {
   .footer-wrapper {
     display: flex;
     flex-direction: row;
@@ -1745,7 +1747,6 @@ h4 {
     justify-content: space-around;
   }
 } */
-
 
 .footer-wrapper {
   display: flex;
@@ -2244,7 +2245,8 @@ h4 {
 
 .cards-area .card-content {
   padding: 30px;
-  background: #f9f9ff;
+  /* background: #f9f9ff; */
+  background: #edf3f6;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
@@ -2252,8 +2254,10 @@ h4 {
 }
 .cards-area .card-content .style-change {
   color: #89ba16;
-  font-family: "Roboto", sans-serif;
-  font-size: 20px;
+  /* font-family: "Roboto", sans-serif; */
+  /* font-family: 'Teko', sans-serif; */
+  font-family: "Staatliches", cursive;
+  font-size: 18px;
   font-weight: 700;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
